@@ -1,7 +1,7 @@
 """File to define River class."""
 
-from exercises.ex05.fish import Fish
-from exercises.ex05.bear import Bear
+from exercises.ex06.fish import Fish
+from exercises.ex06.bear import Bear
 
 class River:
     
@@ -11,28 +11,41 @@ class River:
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
         # populate the river with fish and bears
-        for _ in range(0, num_fish):
+        for _ in range(num_fish):
             self.fish.append(Fish())
-        for _ in range(0, num_bears):
+        for _ in range(num_bears):
             self.bears.append(Bear())
 
     def check_ages(self):
         return None
 
     def bears_eating(self):
-        return None
+        
+        for bear in self.bears:
+            if len(self.fish) >= 5:
+                bear.eat(3)
+                self.remove_fish(3)
     
     def check_hunger(self):
-        return None
+       
+       surviving_bears = [bear for bear in self.bears if bear.hunger_score > 0]
+       self.bears = surviving_bears
         
     def repopulate_fish(self):
-        return None
+      
+        num_new_fish=(len(self.fish)//2)*4  
+        for _ in range(num_new_fish):
+            self.fish.append(Fish())
     
     def repopulate_bears(self):
-        return None
+        num_new_bears = len(self.bears) // 2
+        for _ in range(num_new_bears):
+            self.bears.append(Bear())
     
     def view_river(self):
-        return None
+        print(f"~~~ Day {self.day}: ~~~")
+        print(f"Fish population: {len(self.fish)}")
+        print(f"Bear population: {len(self.bears)}")
             
     def one_river_day(self):
         """Simulate one day of life in the river"""
@@ -57,3 +70,26 @@ class River:
         # Visualize River
         self.view_river()
             
+    def one_river_week(self):
+
+        for_in range(7):
+            self.one_river_day()
+
+    def check_ages(self):
+
+
+
+        surviving_fish = [fish for fish in self.fish if fish.age < 3]
+        self.fish = surviving_fish  
+
+        surviving_bears = [bear for bear in self.bears if bear.age < 5] 
+
+        self.bears= surviving_bears
+
+    def remove_fish(self, amount: int):
+
+        if amount> len(self.fish):
+            amount=len(self.fish)
+
+        self.fish= self.fish[amount:]
+
