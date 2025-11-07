@@ -1,7 +1,7 @@
 """File to define River class."""
 
-from exercises.ex06.fish import Fish
-from exercises.ex06.bear import Bear
+from fish import Fish
+from bear import Bear
 
 class River:
     
@@ -72,7 +72,7 @@ class River:
             
     def one_river_week(self):
 
-        for_in range(7):
+        for i in range(7):
             self.one_river_day()
 
     def check_ages(self):
