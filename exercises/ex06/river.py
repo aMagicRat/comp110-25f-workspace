@@ -1,11 +1,13 @@
 """File to define River class."""
 
+__author__= """730859678"""
+
 from fish import Fish
 from bear import Bear
 
 class River:
     
-    def __init__(self, num_fish: int, num_bears:int):
+    def __init__(self, num_fish: int, num_bears:int)-None:
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
         self.fish: list[Fish] = []
@@ -79,10 +81,10 @@ class River:
 
 
 
-        surviving_fish = [fish for fish in self.fish if fish.age < 3]
+        surviving_fish = [fish for fish in self.fish if fish.age <= 3]
         self.fish = surviving_fish  
 
-        surviving_bears = [bear for bear in self.bears if bear.age < 5] 
+        surviving_bears = [bear for bear in self.bears if bear.age <= 5] 
 
         self.bears= surviving_bears
 
