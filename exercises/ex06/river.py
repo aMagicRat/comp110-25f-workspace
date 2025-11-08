@@ -19,7 +19,7 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self)->None:
-         self.fish = [fish for fish in self.fish if fish.age <= 3]
+        self.fish = [fish for fish in self.fish if fish.age <= 3]
         self.bears = [bear for bear in self.bears if bear.age <= 5]
 
     def bears_eating(self)->None:
@@ -31,7 +31,7 @@ class River:
 
     def check_hunger(self)->None:
 
-        surviving_bears = [bear for bear in self.bears if bear.hunger_score >= 0]   
+       surviving_bears = [bear for bear in self.bears if bear.hunger_score >= 0]   
        self.bears = surviving_bears
         
     def repopulate_fish(self)->None:
