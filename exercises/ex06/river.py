@@ -6,6 +6,7 @@ from exercises.ex06.fish import Fish
 from exercises.ex06.bear import Bear
 
 class River:
+    """River class representing the River in the simulation."""
 
     def __init__(self, num_fish: int, num_bears: int) -> None:
         """New River with num_fish Fish and num_bears Bears"""
